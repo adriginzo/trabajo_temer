@@ -1,0 +1,249 @@
+/* ==========================================================================
+   INDEX.CSS - Estilos específicos de la página principal (SendasCV)
+   ========================================================================== */
+
+/* 1. SECCIÓN HERO (PRESENTACIÓN Y VÍDEO) */
+.hero {
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cbd5e1;
+  border-radius: 8px;
+  padding-top: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-texto {
+  width: 48%;
+}
+
+.hero-texto h1 {
+  font-size: 30px;
+  color: #1b5e20;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hero-texto p {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.hero-acciones a {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.hero-multimedia {
+  width: 48%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.hero-multimedia video {
+  width: 100%;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cccccc;
+}
+
+.hero-multimedia figcaption {
+  font-size: 13px;
+  color: #555555;
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* 2. SECCIÓN DE PROVINCIAS (TARJETAS EN FILA) */
+.seccion-provincias {
+  margin-bottom: 35px;
+}
+
+.seccion-provincias h2,
+.seccion-consejos h2,
+.seccion-ods h2 {
+  font-size: 24px;
+  color: #1b5e20;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #c8e6c9;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.rejilla-tarjetas {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tarjeta-provincia {
+  width: 31%;
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Clase que añadirá JavaScript al pasar el ratón o enfocar la tarjeta */
+.tarjeta-provincia.tarjeta-destacada {
+  border-color: #1b5e20;
+  background-color: #e8f5e9;
+}
+
+.tarjeta-provincia figure {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.tarjeta-provincia img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.tarjeta-provincia figcaption {
+  background-color: #f1f5f9;
+  font-size: 13px;
+  color: #444444;
+  padding-top: 5px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+}
+
+.tarjeta-contenido {
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+.tarjeta-contenido h3 {
+  margin-top: 0px;
+  margin-bottom: 8px;
+  color: #1b5e20;
+  font-size: 20px;
+}
+
+.tarjeta-contenido a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #1b5e20;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 3. SECCIÓN DECÁLOGO SOSTENIBLE (DESPLEGABLE CON JS) */
+.seccion-consejos {
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cbd5e1;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  margin-bottom: 35px;
+}
+
+#lista-consejos {
+  margin-top: 15px;
+  padding-top: 15px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  background-color: #e8f5e9;
+  border-left-style: solid;
+  border-left-width: 4px;
+  border-left-color: #1b5e20;
+  border-radius: 4px;
+}
+
+#lista-consejos li {
+  margin-bottom: 8px;
+}
+
+/* 4. SECCIÓN OBJETIVOS DE DESARROLLO SOSTENIBLE (ODS) */
+.ods-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.ods-card {
+  width: 48%;
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cbd5e1;
+  border-top-width: 5px;
+  border-top-color: #2e7d32;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.ods-card h3 {
+  margin-top: 0px;
+  color: #1b5e20;
+}
+
+/* 5. SOPORTE PARA MODO ALTO CONTRASTE EN ELEMENTOS DE PORTADA */
+body.alto-contraste .hero,
+body.alto-contraste .tarjeta-provincia,
+body.alto-contraste .seccion-consejos,
+body.alto-contraste .ods-card,
+body.alto-contraste #lista-consejos {
+  background-color: #111111;
+  border-color: #ffeb3b;
+  color: #ffffff;
+}
+
+body.alto-contraste .hero-texto h1,
+body.alto-contraste .seccion-provincias h2,
+body.alto-contraste .seccion-consejos h2,
+body.alto-contraste .seccion-ods h2,
+body.alto-contraste .tarjeta-contenido h3,
+body.alto-contraste .tarjeta-contenido a,
+body.alto-contraste .ods-card h3 {
+  color: #ffeb3b;
+}
+
+body.alto-contraste .hero-texto p,
+body.alto-contraste .tarjeta-provincia figcaption {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* 6. ADAPTACIÓN BÁSICA A MÓVILES / TABLETS */
+@media (max-width: 800px) {
+  .hero-texto,
+  .hero-multimedia,
+  .tarjeta-provincia,
+  .ods-card {
+    width: 100%;
+  }
+}
