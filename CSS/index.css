@@ -34,13 +34,10 @@
     border: 2px solid black;
 }
 
-/* Galería de provincias (igual que el ejercicio de clase) */
 .zona-imagenes {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
     width: 100%;
     border: 2px solid #1b5e20;
     background-color: white;
@@ -51,10 +48,12 @@
 
 .img-envoltorio {
     position: relative;
-    width: 280px;
-    height: 190px;
+    width: calc(100% / 3 - 15px);
+    height: 200px;
     overflow: hidden;
     border: 2px solid black;
+    box-sizing: border-box;
+    background-color: black;
 }
 
 .img-envoltorio img {
@@ -76,48 +75,139 @@
     box-sizing: border-box;
 }
 
-/* Clase que pondrá JavaScript al pasar el ratón por encima de una tarjeta */
+.descripcion-provincia {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
 .tarjeta-provincia.destacada {
-    border: 4px solid #d84315;
+    border: 4px solid #1b5e20;
+}
+
+.tarjeta-provincia.destacada img {
+    opacity: 0.25;
 }
 
 .tarjeta-provincia.destacada .imagen-tag {
-    background-color: #1b5e20;
+    display: none;
 }
 
-/* Tres cajas en fila para ODS y consejos */
-.zona-secciones {
+.tarjeta-provincia.destacada .descripcion-provincia {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bloque 3: Sección del Mapa del Tiempo */
+.zona-tiempo {
     width: 100%;
-    margin-top: 10px;
     margin-bottom: 20px;
     border: 2px solid #1b5e20;
     background-color: white;
-    padding: 10px;
+    padding: 15px;
+    text-align: center;
     box-sizing: border-box;
 }
 
-.caja {
-    width: calc(100% / 3 - 10px);
-    height: 210px;
+.botones-provincia {
+    margin-bottom: 15px;
+}
+
+.btn-tiempo {
+    padding: 8px 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 6px;
+    background-color: #e8f5e9;
+    border: 2px solid #1b5e20;
+    color: #1b5e20;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-tiempo:hover,
+.btn-tiempo.activo-tiempo {
+    background-color: #1b5e20;
+    color: white;
+}
+
+.zona-tiempo iframe {
+    width: 100%;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+.zona-ods {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid #1b5e20;
+    background-color: white;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.caja-ods {
+    width: calc(50% - 10px);
     background-color: #f0f4f0;
     border: 1px solid #3c3c3c;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
-    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.caja h3 {
+.caja-ods img {
+    width: 90px;
+    height: 90px;
+    border: 1px solid #3c3c3c;
+}
+
+.caja-ods h3 {
     margin-top: 0;
     color: #1b5e20;
 }
 
-/* Adaptación en modo alto contraste para las cajas de index */
+/* Bloque 5: Sección independiente para los Consejos */
+.zona-consejos {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid #1b5e20;
+    background-color: white;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.zona-consejos ul {
+    margin-top: 15px;
+    background-color: #f0f4f0;
+    padding: 15px 15px 15px 35px;
+    border-left: 5px solid #1b5e20;
+}
+
+.zona-consejos li {
+    margin-bottom: 8px;
+}
+
+/* Adaptación en modo alto contraste para las nuevas secciones */
 body.alto-contraste .zona-presentacion,
 body.alto-contraste .zona-imagenes,
-body.alto-contraste .zona-secciones,
-body.alto-contraste .caja {
+body.alto-contraste .zona-tiempo,
+body.alto-contraste .zona-ods,
+body.alto-contraste .caja-ods,
+body.alto-contraste .zona-consejos,
+body.alto-contraste .zona-consejos ul {
     background-color: #111111;
     border-color: yellow;
     color: yellow;

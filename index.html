@@ -61,41 +61,95 @@
             <article class="img-envoltorio tarjeta-provincia" tabindex="0">
                 <img src="assets/img/castellon-penyagolosa.jpg" alt="Pico Penyagolosa rodeado de pinos en Castellón">
                 <div class="imagen-tag">Castellón - Penyagolosa</div>
+                <div class="descripcion-provincia">
+                    <strong>Castellón:</strong> Rutas de alta montaña, bosques mediterráneos y pueblos de interior con bajo impacto turístico.
+                </div>
             </article>
 
             <article class="img-envoltorio tarjeta-provincia" tabindex="0">
                 <img src="assets/img/valencia-albufera.jpg" alt="Atardecer en el Parque Natural de la Albufera en València">
                 <div class="imagen-tag">València - L'Albufera</div>
+                <div class="descripcion-provincia">
+                    <strong>València:</strong> Humedales costeros, vías verdes para bicicleta y senderos accesibles en transporte público.
+                </div>
             </article>
 
             <article class="img-envoltorio tarjeta-provincia" tabindex="0">
                 <img src="assets/img/alicante-fontroja.jpg" alt="Sendero entre árboles en la Font Roja de Alicante">
                 <div class="imagen-tag">Alicante - Font Roja</div>
+                <div class="descripcion-provincia">
+                    <strong>Alicante:</strong> Sierras prelitorales, microrreservas de flora autóctona y miradores al Mediterráneo.
+                </div>
             </article>
         </section>
 
-        <!-- Bloque 3: Tres cajas en fila (Objetivos ODS y Consejos) -->
-        <h2>Compromiso Sostenible y Consejos</h2>
-        <section class="zona-secciones">
-            <article class="caja">
-                <h3>ODS 11: Comunidades Sostenibles</h3>
-                <p>Fomentamos el acceso seguro y gratuito a zonas verdes y protegemos el patrimonio natural y cultural de nuestros municipios.</p>
-            </article>
+        <!-- Bloque 3: Mapa Meteorológico Interactivo (iframe + dataset) -->
+        <h2>Previsión Meteorológica y Viento en Tiempo Real</h2>
+        <section class="zona-tiempo">
+            <p>Selecciona una zona para centrar el radar meteorológico y consultar el viento en directo:</p>
+            
+            <div class="botones-provincia">
+                <button type="button" class="btn-tiempo activo-tiempo" 
+                        data-mapa="https://embed.windy.com/embed2.html?lat=39.47&lon=-0.38&zoom=8&level=surface&overlay=wind">
+                    Toda la Comunitat
+                </button>
 
-            <article class="caja">
-                <h3>ODS 15: Ecosistemas Terrestres</h3>
-                <p>Promovemos el senderismo responsable para evitar la erosión del suelo y proteger la flora y fauna autóctona.</p>
-            </article>
+                <button type="button" class="btn-tiempo" 
+                        data-mapa="https://embed.windy.com/embed2.html?lat=39.99&lon=-0.05&zoom=11&level=surface&overlay=wind">
+                    Castellón
+                </button>
 
-            <article class="caja">
-                <h3>Decálogo del Excursionista</h3>
-                <button type="button" id="btn-consejos" aria-expanded="false">Mostrar consejos</button>
-                <ul id="lista-consejos" hidden>
-                    <li>No salgas de los senderos marcados.</li>
-                    <li>Lleva una bolsa para traer toda tu basura.</li>
-                    <li>Usa tren o autobús siempre que sea posible.</li>
-                </ul>
+                <button type="button" class="btn-tiempo" 
+                        data-mapa="https://embed.windy.com/embed2.html?lat=39.47&lon=-0.38&zoom=11&level=surface&overlay=wind">
+                    València
+                </button>
+
+                <button type="button" class="btn-tiempo" 
+                        data-mapa="https://embed.windy.com/embed2.html?lat=38.35&lon=-0.48&zoom=11&level=surface&overlay=wind">
+                    Alicante
+                </button>
+            </div>
+
+            <iframe id="iframe-tiempo" 
+                    title="Mapa meteorológico interactivo de la Comunitat Valenciana"
+                    src="https://embed.windy.com/embed2.html?lat=39.47&lon=-0.38&zoom=8&level=surface&overlay=wind" 
+                    width="100%" 
+                    height="320" 
+                    frameborder="0">
+            </iframe>
+        </section>
+
+        <!-- Bloque 4: Compromiso con los Objetivos de Desarrollo Sostenible -->
+        <h2>Compromiso con los Objetivos de Desarrollo Sostenible (ODS)</h2>
+        <section class="zona-ods">
+            <article class="caja-ods">
+                <img src="assets/img/ods11.jpg" alt="Logotipo oficial del ODS 11: Ciudades y comunidades sostenibles" width="90" height="90">
+                <div>
+                    <h3>ODS 11: Ciudades y Comunidades Sostenibles</h3>
+                    <p>Fomentamos el acceso seguro, inclusivo y gratuito a las zonas verdes y espacios naturales de la Comunitat Valenciana, impulsando el transporte público para reducir la huella de carbono en los desplazamientos.</p>
+                </div>
             </article>
+            <article class="caja-ods">
+                <img src="assets/img/ods15.jpg" alt="Logotipo oficial del ODS 15: Vida de ecosistemas terrestres" width="90" height="90">
+                <div>
+                    <h3>ODS 15: Vida de Ecosistemas Terrestres</h3>
+                    <p>Promovemos el senderismo responsable para evitar la erosión del suelo, proteger la flora y fauna autóctona de nuestros parques naturales y concienciar sobre la conservación de la biodiversidad.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Bloque 5 (SEPARADO): Decálogo del Excursionista -->
+        <h2>Decálogo del Senderista Responsable</h2>
+        <section class="zona-consejos">
+            <p>Antes de iniciar cualquier ruta por nuestros parques naturales, revisa estas normas básicas de convivencia y respeto ambiental:</p>
+            <button type="button" id="btn-consejos" class="boton" aria-expanded="false">Mostrar consejos</button>
+            
+            <ul id="lista-consejos" hidden>
+                <li><strong>No salgas de los senderos marcados:</strong> Evitas pisar flora protegida y previenes la erosión del terreno.</li>
+                <li><strong>Residuo cero:</strong> Lleva siempre una bolsa para traer de vuelta toda tu basura, incluidos restos orgánicos.</li>
+                <li><strong>Prioriza el transporte público:</strong> Utiliza trenes de Cercanías o autobuses interurbanos siempre que la ruta lo permita.</li>
+                <li><strong>Respeta la fauna y el silencio:</strong> No alimentes a los animales silvestres ni uses altavoces en la naturaleza.</li>
+            </ul>
         </section>
 
     </main>

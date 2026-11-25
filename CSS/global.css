@@ -63,12 +63,11 @@ nav button:hover {
     color: white;
 }
 
-/* Accesibilidad: recuadro visible al navegar con el tabulador */
 a:focus,
 button:focus,
 input:focus,
 select:focus {
-    outline: 3px solid #d84315;
+    outline: 3px solid #1b5e20;
 }
 
 main {
@@ -80,6 +79,19 @@ main {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
+}
+
+main h2 {
+    width: 100%;
+    color: #1b5e20;
+    background-color: #e8f5e9;
+    border-left: 6px solid #1b5e20;
+    border-bottom: 2px solid #1b5e20;
+    padding: 10px 15px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    text-align: left;
 }
 
 .boton {
@@ -107,7 +119,6 @@ footer {
     width: 100%;
 }
 
-/* Clase para el botón de accesibilidad (Alto Contraste) */
 body.alto-contraste {
     background-color: black;
     color: yellow;
@@ -126,4 +137,16 @@ body.alto-contraste nav a:hover,
 body.alto-contraste nav a.activo {
     background-color: yellow;
     color: black;
+}
+
+body.alto-contraste main h2 {
+    background-color: #111111;
+    color: yellow;
+    border-color: yellow;
+}
+
+body.alto-contraste main h3 {
+    background-color: #111111;
+    color: yellow;
+    border-color: yellow;
 }

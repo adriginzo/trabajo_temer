@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. RESALTAR TARJETAS DE PROVINCIA AL PASAR EL RATÓN O ENFOCAR (Cambio de estilo)
+    // 4. RESALTAR TARJETAS DE PROVINCIA AL PASAR EL RATÓN O ENFOCAR
     const tarjetas = document.querySelectorAll('.tarjeta-provincia');
     tarjetas.forEach((tarjeta) => {
         tarjeta.addEventListener('mouseover', () => {
@@ -87,12 +87,26 @@ document.addEventListener('DOMContentLoaded', () => {
         tarjeta.addEventListener('mouseout', () => {
             tarjeta.classList.remove('destacada');
         });
-        // También al navegar con teclado (Tab) para mantener accesibilidad
         tarjeta.addEventListener('focus', () => {
             tarjeta.classList.add('destacada');
         });
         tarjeta.addEventListener('blur', () => {
             tarjeta.classList.remove('destacada');
+        });
+    });
+
+    // 5. ZOOM EN EL MAPA METEOROLÓGICO POR CIUDAD (dataset + cambio de atributo src)
+    const botonesTiempo = document.querySelectorAll('.btn-tiempo');
+    const iframeTiempo = document.getElementById('iframe-tiempo');
+
+    botonesTiempo.forEach((boton) => {
+        boton.addEventListener('click', () => {
+            botonesTiempo.forEach(b => b.classList.remove('activo-tiempo'));
+            boton.classList.add('activo-tiempo');
+
+            if (iframeTiempo) {
+                iframeTiempo.src = boton.dataset.mapa;
+            }
         });
     });
 
