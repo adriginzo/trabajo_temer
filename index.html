@@ -18,142 +18,90 @@
 </head>
 
 <body>
-    <!-- Accesibilidad: Permite a usuarios de teclado saltar directamente al contenido -->
-    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
-    
-    <!-- CABECERA Y NAVEGACIÓN COMÚN (Plantilla para las 4 páginas) -->
-    <header class="cabecera-principal">
-        <div class="contenedor-header">
-            <div class="marca">
-                <img src="assets/img/logo-sendascv.png" alt="Logotipo de SendasCV: una montaña verde y un sendero" width="48" height="48">
-                <div>
-                    <span class="titulo-web">SendasCV</span>
-                    <p class="subtitulo-web">Ecoturismo y Senderismo Responsable</p>
-                </div>
-            </div>
-            <!-- Botón accesible para cambiar contraste/tamaño de letra (Requisito JS: cambio de estilo) -->
-            <div class="controles-accesibilidad" role="region" aria-label="Opciones de visualización">
-                <button type="button" id="btn-contraste" aria-pressed="false">Alto Contraste</button>
-                <button type="button" id="btn-texto-grande" aria-pressed="false">Texto Grande (A+)</button>
-                <button type="button" id="btn-lectura" aria-pressed="false">Escuchar Página</button>
-            </div>
-        </div>
 
-        <nav class="navegacion-principal" aria-label="Menú principal">
-            <ul>
-                <li><a href="index.html" aria-current="page">Inicio</a></li>
-                <li><a href="html/rutas.html">Catálogo de Rutas</a></li>
-                <li><a href="html/itinerario.html">Planificador de Escapada</a></li>
-                <li><a href="html/inscripcion.html">Inscripción Guiada</a></li>
-            </ul>
-        </nav>
+    <header>
+        <h1>SendasCV - Turismo Sostenible</h1>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <nav aria-label="Menú principal">
+        <a href="index.html" class="activo">Inicio</a>
+        <a href="html/rutas.html">Catálogo de Rutas</a>
+        <a href="html/itinerario.html">Planificador de Escapada</a>
+        <a href="html/inscripcion.html">Inscripción Guiada</a>
+        <button type="button" id="btn-contraste">Alto Contraste</button>
+        <button type="button" id="btn-lectura" aria-pressed="false">Escuchar Página</button>
+    </nav>
+
     <main id="contenido-principal">
 
-        <!-- Sección 1: Hero / Presentación con Vídeo -->
-        <section class="hero" aria-labelledby="titulo-hero">
-            <div class="hero-texto">
-                <h1 id="titulo-hero">Descubre la Comunitat Valenciana sin dejar huella</h1>
-                <p>Explora parajes naturales protegidos de Alicante, Castellón y València fomentando el transporte limpio, el respeto a la biodiversidad y el desarrollo rural sostenible.</p>
-                <div class="hero-acciones">
-                    <a href="html/rutas.html" class="boton-primario">Explorar Rutas</a>
-                    <a href="html/itinerario.html" class="boton-secundario">Organizar mi Fin de Semana</a>
-                </div>
+        <!-- Bloque 1: Presentación y vídeo en bucle al lado -->
+        <section class="zona-presentacion">
+            <div class="texto-presentacion">
+                <h2>Descubre la Comunitat Valenciana sin dejar huella</h2>
+                <p>
+                    Explora parajes naturales protegidos de Alicante, Castellón y València fomentando el transporte limpio, el respeto a la biodiversidad y el desarrollo rural sostenible.
+                </p>
+                <p>
+                    <a href="html/rutas.html" class="boton">Ver Rutas</a>
+                    <a href="html/itinerario.html" class="boton">Crear Itinerario</a>
+                </p>
             </div>
-            <figure class="hero-multimedia">
-                <video controls preload="metadata" poster="assets/img/poster-video.jpg" width="600">
+
+            <div class="video-presentacion">
+                <video autoplay muted loop width="450" height="250" poster="assets/img/poster-video.jpg">
                     <source src="assets/video/naturaleza-cv.mp4" type="video/mp4">
-                    <!-- Pista de subtítulos para accesibilidad auditiva -->
-                    <track kind="captions" src="assets/video/subtitulos-es.vtt" srclang="es" label="Español" default>
-                    Tu navegador no soporta la reproducción de vídeo HTML5. Puedes descargar el vídeo <a href="assets/video/naturaleza-cv.mp4">aquí</a>.
+                    Tu navegador no soporta la reproducción de vídeo.
                 </video>
-                <figcaption>Panorámica de senderos naturales en la Sierra Calderona y el Parque Natural de la Albufera.</figcaption>
-            </figure>
-        </section>
-
-        <!-- Sección 2: Tarjetas por Provincia (Interactividad JS: cambio de estilo al pasar ratón/foco) -->
-        <section class="seccion-provincias" aria-labelledby="titulo-provincias">
-            <h2 id="titulo-provincias">Explora por Provincia</h2>
-            <p>Selecciona un territorio para conocer sus espacios naturales protegidos:</p>
-
-            <div class="rejilla-tarjetas">
-                <article class="tarjeta-provincia" tabindex="0">
-                    <figure>
-                        <img src="assets/img/castellon-penyagolosa.jpg" alt="Vista panorámica del pico Penyagolosa rodeado de pinos en Castellón" width="350" height="220">
-                        <figcaption>Parque Natural del Penyagolosa</figcaption>
-                    </figure>
-                    <div class="tarjeta-contenido">
-                        <h3>Castellón</h3>
-                        <p>Rutas de media montaña, bosques mediterráneos y pueblos de interior con bajo impacto turístico.</p>
-                        <a href="html/rutas.html" aria-label="Ver rutas de senderismo en Castellón">Ver rutas en Castellón</a>
-                    </div>
-                </article>
-
-                <article class="tarjeta-provincia" tabindex="0">
-                    <figure>
-                        <img src="assets/img/valencia-albufera.jpg" alt="Atardecer sobre las aguas tranquilas y arrozales de la Albufera de València" width="350" height="220">
-                        <figcaption>Parque Natural de l'Albufera</figcaption>
-                    </figure>
-                    <div class="tarjeta-contenido">
-                        <h3>València</h3>
-                        <p>Humedales costeros, vías verdes accesibles en bicicleta y senderos fluviales conectados por tren.</p>
-                        <a href="html/rutas.html" aria-label="Ver rutas de senderismo en València">Ver rutas en València</a>
-                    </div>
-                </article>
-
-                <article class="tarjeta-provincia" tabindex="0">
-                    <figure>
-                        <img src="assets/img/alicante-fontroja.jpg" alt="Sendero entre carrascas y arces en el Carrascal de la Font Roja en Alicante" width="350" height="220">
-                        <figcaption>Carrascal de la Font Roja</figcaption>
-                    </figure>
-                    <div class="tarjeta-contenido">
-                        <h3>Alicante</h3>
-                        <p>Sierras prelitorales, microrreservas de flora autóctona y miradores mediterráneos.</p>
-                        <a href="html/rutas.html" aria-label="Ver rutas de senderismo en Alicante">Ver rutas en Alicante</a>
-                    </div>
-                </article>
             </div>
         </section>
 
-        <!-- Sección 3: Decálogo Sostenible (Interactividad JS: aparición y desaparición de contenido) -->
-        <section class="seccion-consejos" aria-labelledby="titulo-consejos">
-            <h2 id="titulo-consejos">Decálogo del Senderista Responsable</h2>
-            <p>Antes de salir a la montaña, consulta nuestras recomendaciones básicas de conservación:</p>
-            <button type="button" id="btn-toggle-consejos" class="boton-secundario" aria-expanded="false" aria-controls="lista-consejos">Mostrar consejos de conservación</button>
-            <div id="lista-consejos" class="panel-oculto" hidden>
-                <ul>
-                    <li><strong>No salgas de los senderos señalizados:</strong> Evitas la erosión del suelo y proteges especies vegetales vulnerables.</li>
-                    <li><strong>Residuo cero:</strong> Todo lo que sube en tu mochila vuelve contigo, incluidos restos orgánicos como pieles de fruta.</li>
-                    <li><strong>Prioriza el transporte público:</strong> Muchas de nuestras rutas tienen acceso directo mediante Cercanías Renfe o autobús interurbano.</li>
-                    <li><strong>Respeta la fauna silvestre:</strong> Mantén el silencio y no alimentes a los animales del entorno.</li>
+        <!-- Bloque 2: Galería de provincias -->
+        <h2>Espacios Naturales por Provincia</h2>
+        <section class="zona-imagenes">
+            <article class="img-envoltorio tarjeta-provincia" tabindex="0">
+                <img src="assets/img/castellon-penyagolosa.jpg" alt="Pico Penyagolosa rodeado de pinos en Castellón">
+                <div class="imagen-tag">Castellón - Penyagolosa</div>
+            </article>
+
+            <article class="img-envoltorio tarjeta-provincia" tabindex="0">
+                <img src="assets/img/valencia-albufera.jpg" alt="Atardecer en el Parque Natural de la Albufera en València">
+                <div class="imagen-tag">València - L'Albufera</div>
+            </article>
+
+            <article class="img-envoltorio tarjeta-provincia" tabindex="0">
+                <img src="assets/img/alicante-fontroja.jpg" alt="Sendero entre árboles en la Font Roja de Alicante">
+                <div class="imagen-tag">Alicante - Font Roja</div>
+            </article>
+        </section>
+
+        <!-- Bloque 3: Tres cajas en fila (Objetivos ODS y Consejos) -->
+        <h2>Compromiso Sostenible y Consejos</h2>
+        <section class="zona-secciones">
+            <article class="caja">
+                <h3>ODS 11: Comunidades Sostenibles</h3>
+                <p>Fomentamos el acceso seguro y gratuito a zonas verdes y protegemos el patrimonio natural y cultural de nuestros municipios.</p>
+            </article>
+
+            <article class="caja">
+                <h3>ODS 15: Ecosistemas Terrestres</h3>
+                <p>Promovemos el senderismo responsable para evitar la erosión del suelo y proteger la flora y fauna autóctona.</p>
+            </article>
+
+            <article class="caja">
+                <h3>Decálogo del Excursionista</h3>
+                <button type="button" id="btn-consejos" aria-expanded="false">Mostrar consejos</button>
+                <ul id="lista-consejos" hidden>
+                    <li>No salgas de los senderos marcados.</li>
+                    <li>Lleva una bolsa para traer toda tu basura.</li>
+                    <li>Usa tren o autobús siempre que sea posible.</li>
                 </ul>
-            </div>
+            </article>
         </section>
 
-        <!-- Sección 4: Compromiso con la Agenda 2030 (Requisito obligatorio de la guía) -->
-        <section class="seccion-ods" aria-labelledby="titulo-ods">
-            <h2 id="titulo-ods">Compromiso con los Objetivos de Desarrollo Sostenible</h2>
-            <div class="ods-grid">
-                <article class="ods-card">
-                    <h3>ODS 11: Ciudades y Comunidades Sostenibles</h3>
-                    <p>Fomentamos el acceso universal a zonas verdes seguras y la protección del patrimonio natural y cultural valenciano.</p>
-                </article>
-                <article class="ods-card">
-                    <h3>ODS 15: Vida de Ecosistemas Terrestres</h3>
-                    <p>Promovemos el uso sostenible de los ecosistemas terrestres y la sensibilización ciudadana frente a la pérdida de biodiversidad.</p>
-                </article>
-            </div>
-        </section>
+    </main>
 
-  </main>
-
-    <!-- PIE DE PÁGINA COMÚN -->
-    <footer class="pie-principal">
-        <div class="contenedor-footer">
-        <p><strong>SendasCV</strong> — Proyecto de TEMER (MUIT UPV, Curso 2026-2027).</p>
-        </div>
+    <footer>
+        <p>SendasCV - Proyecto TEMER 2026 (UPV)</p>
     </footer>
 
 </body>
