@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal de turismo sostenible y senderismo responsable en la Comunitat Valenciana.">
+    <meta name="author" content="Ramón Estévez Lochmüller">
+    <meta name="author" content="Adrián Ginzo Graña">
+    <meta name="author" content="Marta López Rodríguez">
+    <meta name="author" content="Gabriela Roche Díaz">
+    <title>Planificador de Escapada | SendasCV</title>
+
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/itinerario.css">
+    <link rel="icon" href="../assets/img/icon.jpg" type="image/png">
+
+    <script src="../JS/itinerario.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>SendasCV - Turismo Sostenible</h1>
+    </header>
+
+    <nav aria-label="Menú principal">
+        <a href="../index.html">Inicio</a>
+        <a href="../HTML/rutas.html">Catálogo de Rutas</a>
+        <a href="../HTML/itinerario.html" class="activo">Planificador de Escapada</a>
+        <a href="../HTML/inscripcion.html">Inscripción Guiada</a>
+        <button type="button" id="btn-contraste">Alto Contraste</button>
+        <button type="button" id="btn-lectura" aria-pressed="false">Escuchar Página</button>
+    </nav>
+
+    <main id="contenido-principal">
+
+        <h2>Planificador de Escapada Sostenible</h2>
+        <p class="intro-planificador">Arrastra las rutas desde el banco disponible hasta los días de tu escapada (o devuélvelas al banco si cambias de idea).</p>
+
+        <!-- Marcadores (igual que en solitario.html) -->
+        <div class="marcadores">
+            <span>Rutas elegidas: <strong id="cont_rutas">0</strong></span>
+            <span>Distancia total: <strong id="cont_km">0</strong> km</span>
+            <span>CO₂ ahorrado: <strong id="cont_co2">0</strong> kg</span>
+            <button type="button" id="reset" class="boton">Reiniciar</button>
+        </div>
+
+        <!-- Zona de cajas (Banco + 3 Días) -->
+        <div class="zona-planificador">
+
+            <div id="banco" class="caja-destino">
+                <h3>Rutas Disponibles (<span id="cont_banco">6</span>)</h3>
+
+                <div id="ruta1" class="ficha-ruta" draggable="true" data-km="12">
+                    <strong>Pico Penyagolosa</strong> (Castellón - 12 km)
+                </div>
+
+                <div id="ruta2" class="ficha-ruta" draggable="true" data-km="9">
+                    <strong>Desierto de las Palmas</strong> (Castellón - 9 km)
+                </div>
+
+                <div id="ruta3" class="ficha-ruta" draggable="true" data-km="8">
+                    <strong>Parque Natural de L'Albufera</strong> (València - 8 km)
+                </div>
+
+                <div id="ruta4" class="ficha-ruta" draggable="true" data-km="11">
+                    <strong>Puentes Colgantes de Chulilla</strong> (València - 11 km)
+                </div>
+
+                <div id="ruta5" class="ficha-ruta" draggable="true" data-km="10">
+                    <strong>Carrascal de la Font Roja</strong> (Alicante - 10 km)
+                </div>
+
+                <div id="ruta6" class="ficha-ruta" draggable="true" data-km="7">
+                    <strong>Parque Natural de Serra Gelada</strong> (Alicante - 7 km)
+                </div>
+            </div>
+
+            <div class="columna-dias">
+                <div id="dia1" class="caja-destino">
+                    <h3>Día 1 (<span id="cont_dia1">0</span>)</h3>
+                </div>
+
+                <div id="dia2" class="caja-destino">
+                    <h3>Día 2 (<span id="cont_dia2">0</span>)</h3>
+                </div>
+
+                <div id="dia3" class="caja-destino">
+                    <h3>Día 3 (<span id="cont_dia3">0</span>)</h3>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>SendasCV - Proyecto TEMER 2026 (UPV)</p>
+    </footer>
+
+</body>
+</html>

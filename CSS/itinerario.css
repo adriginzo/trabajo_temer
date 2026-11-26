@@ -1,0 +1,68 @@
+.intro-planificador {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.marcadores {
+    width: 100%;
+    background-color: #e8f5e9;
+    border: 2px solid #1b5e20;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.zona-planificador {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+#banco {
+    width: 48%;
+    min-height: 360px;
+}
+
+.columna-dias {
+    width: 48%;
+}
+
+.caja-destino {
+    background-color: white;
+    border: 2px solid #1b5e20;
+    padding: 15px;
+    margin-bottom: 15px;
+    min-height: 100px;
+    box-sizing: border-box;
+}
+
+.caja-destino h3 {
+    color: #1b5e20;
+    background-color: #e8f5e9;
+    border-left: 5px solid #1b5e20;
+    padding: 6px 10px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.ficha-ruta {
+    background-color: #f0f4f0;
+    border: 1px solid #3c3c3c;
+    border-left: 5px solid #1b5e20;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    cursor: move;
+}
+
+/* Alto contraste */
+body.alto-contraste .marcadores,
+body.alto-contraste .caja-destino,
+body.alto-contraste .ficha-ruta {
+    background-color: #111111;
+    border-color: yellow;
+    color: yellow;
+}
